@@ -17,6 +17,8 @@ $json_array = array(
 
 #半分おまじない。JSONで送りますよという合図
 header("Content-Type: text/javascript; charset=utf-8");
+
+$json_array = mb_convert_encoding($json_array, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 #JSON形式にエンコードしてechoでPOST送信
 echo json_encode($json_array);
 ?>
